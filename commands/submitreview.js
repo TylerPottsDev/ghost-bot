@@ -1,6 +1,6 @@
-const Discord = require("discord.js");
-const { SlashCommandBuilder } = require("@discordjs/builders");
-const axios = require("axios");
+const Discord = require("discord.js")
+const { SlashCommandBuilder } = require("@discordjs/builders")
+const GuildSettings = require("../models/GuildSettings")
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -17,11 +17,23 @@ module.exports = {
 				.setRequired(false)
 		),
 	async execute(interaction) {
-		interaction.reply({
-			content: "Thank you, your website has been submitted! Check out <#950736154448236594> to see your submission. (It may take a few minutes to appear)" 
-		});
+		const guildSettings = await GuildSettings.findOne({
+			guildID: interaction.member.guild.id
+		})
 
-		const res = await axios(`https://shot.screenshotapi.net/screenshot?&url=${encodeURIComponent(interaction.options.getString("url"))}&width=1920&height=1080&output=image&file_type=jpeg&wait_for_event=load`)
+		console.log(guildSettings)
+
+		if (!guildSettings || !guildSettings.review_channel_id) {
+			interaction.reply({
+				content: "No review channel set, please contact an administrator." 
+			})
+
+			return
+		}
+
+		interaction.reply({
+			content: `Thank you, your website has been submitted! Check out <#${guildSettings.review_channel_id}> to see your submission.` 
+		})
 
 		const embed = new Discord.MessageEmbed()
 			.setColor('#d81e5b')
@@ -34,9 +46,8 @@ module.exports = {
 					? interaction.options.getString("notes") 
 					: 'No notes provided.'
 			)
-			.setImage(res.request.res.responseUrl)
 			.setTimestamp()
 
-		interaction.client.channels.cache.get("950736154448236594").send({ embeds: [embed] });
+		interaction.client.channels.cache.get(guildSettings.review_channel_id).send({ embeds: [embed] })
 	},
 };
