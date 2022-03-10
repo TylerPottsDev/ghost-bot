@@ -26,6 +26,7 @@ jobs:
           host: ${{secrets.HOST}}
           key: ${{secrets.PRIVATE_KEY}}
           username: ${{secrets.USER}}
+          passphrase: ${{secrets.PASSPHRASE}}
           
           script: |
             cd ${{secrets.PATH}}
