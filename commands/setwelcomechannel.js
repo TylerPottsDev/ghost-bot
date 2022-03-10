@@ -18,11 +18,9 @@ module.exports = {
 			return;
 		}
 
-		console.log(interaction.options.getChannel("welcome"));
-
 		GuildSettings.findOne({ guildID: interaction.guild.id }, (err, settings) => {
 			if (err) {
-				console.log(err);
+				console.error(err);
 				interaction.reply({ content: "An error occurred while trying to set the welcome channel" });
 				return;
 			}
@@ -38,7 +36,7 @@ module.exports = {
 
 			settings.save(err => {
 				if (err) {
-					console.log(err);
+					console.error(err);
 					interaction.reply({ content: "An error occurred while trying to set the welcome channel" });
 					return;
 				}

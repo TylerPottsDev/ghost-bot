@@ -14,7 +14,7 @@ module.exports = {
 			.setColor('#d81e5b')
 			.setTitle('New Member!')
 			.setDescription(`Welcome ${member.user}, We hope you enjoy your stay!`)
-			.setImage(member.user.avatarURL)
+			.setImage(`https://cdn.discordapp.com/avatars/${message.user.id}/${message.user.avatar}.jpeg`)
 			.setTimestamp()
 
 		member.guild.channels.cache.get(guildSettings.welcome_channel_id).send({ embeds: [newMemberEmbed] });
