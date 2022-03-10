@@ -21,8 +21,6 @@ module.exports = {
 			guildID: interaction.member.guild.id
 		})
 
-		console.log(guildSettings)
-
 		if (!guildSettings || !guildSettings.review_channel_id) {
 			interaction.reply({
 				content: "No review channel set, please contact an administrator." 
@@ -48,6 +46,8 @@ module.exports = {
 			)
 			.setTimestamp()
 
-		interaction.client.channels.cache.get(guildSettings.review_channel_id).send({ embeds: [embed] })
+		interaction.client.channels.cache.get(guildSettings.review_channel_id).send({ embeds: [embed] }).then(embedMessage => {
+			embedMessage.react("👀");
+		});
 	},
 };
