@@ -12,7 +12,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.deferReply();
 		const { guild } = interaction;
-		const embed3 = new MessageEmbed()
+		const infoEmbed = new MessageEmbed()
 			.setAuthor({ name: guild.name, iconURL: guild.iconURL({ dynamic: true }) })
 			.setThumbnail(guild.iconURL({ dynamic: true }))
 			.setColor('BLURPLE')
@@ -52,6 +52,6 @@ module.exports = {
 				}
 			)
 
-		await interaction.editReply({ content: 'Here you go!', embeds: [embed3] });
+		await interaction.editReply({ content: 'Here you go!', embeds: [infoEmbed] });
 	},
 };
