@@ -46,8 +46,9 @@ module.exports = {
 				{
 					name: 'Emojis and Stickers',
 					value: [
-						`Animated: ${guild.emojis.cache.filter((e) => e.animated).size}`,
-						`Static: ${guild.emojis.cache.filter((e) => !e.animated).size}`
+						`- Animated: ${guild.emojis.cache.filter((e) => e.animated).size}`,
+						`- Static: ${guild.emojis.cache.filter((e) => !e.animated).size}`,
+						`Total: ${guild.emojis.cache.size}`
 					].join('\n')
 				}
 			)
