@@ -1,16 +1,12 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const { MessageEmbed, CommandInteraction } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('serverinfo')
 		.setDescription('Tells you the info of the server you\'re in!'),
 
-	/**
-	 * @param {CommandInteraction} interaction 
-	 */
 	async execute(interaction) {
-		await interaction.deferReply();
 		const { guild } = interaction;
 		const infoEmbed = new MessageEmbed()
 			.setAuthor( guild.name, guild.iconURL({ dynamic: true }) )
@@ -53,6 +49,6 @@ module.exports = {
 				}
 			)
 
-		await interaction.editReply({ content: 'Here you go!', embeds: [infoEmbed] });
+		await interaction.reply({ content: 'Here you go!', embeds: [infoEmbed] });
 	},
 };
