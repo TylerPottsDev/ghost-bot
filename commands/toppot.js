@@ -13,6 +13,7 @@ module.exports = {
      */
 	async execute(interaction) {
 
+		const { guild } = interaction;
         const balanceEmbed = new MessageEmbed()
             .setColor("#d81e5b")
             .setAuthor(`Pot Leaderboard:`, guild.iconURL({ dynamic: true }))
