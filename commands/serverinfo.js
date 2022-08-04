@@ -13,7 +13,7 @@ module.exports = {
 		await interaction.deferReply();
 		const { guild } = interaction;
 		const infoEmbed = new MessageEmbed()
-			.setAuthor({ name: guild.name, iconURL: guild.iconURL({ dynamic: true }) })
+			.setAuthor( guild.name, guild.iconURL({ dynamic: true }) )
 			.setThumbnail(guild.iconURL({ dynamic: true }))
 			.setColor('BLURPLE')
 			.addFields(

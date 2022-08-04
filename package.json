@@ -16,10 +16,10 @@
     "discord-api-types": "^0.24.0",
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
-    "mongoose": "^6.0.12",
+    "mongoose": "^6.5.0",
     "puppeteer": "^13.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.19"
   }
 }

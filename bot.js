@@ -43,4 +43,10 @@ for (const file of eventFiles) {
 	}
 }
 
+const getUserById = (id) => {
+	return client.users.fetch(id);
+}
+
+exports.getUserById = getUserById;
+
 client.login(process.env.TOKEN);
