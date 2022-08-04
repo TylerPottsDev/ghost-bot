@@ -10,6 +10,7 @@ module.exports = {
 				.setRequired(true)
 		),
 	async execute(interaction) {
+		// Responds with the entered message
 		interaction.reply({ content: interaction.options.getString("message") });
 	},
 };

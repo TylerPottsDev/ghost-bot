@@ -48,7 +48,7 @@ module.exports = {
 					interaction.reply({ content: "An error occurred while trying to save the pots" });
 					return;
 				}
-                // Just a confirmation after saving the pots
+                // Just a reply to confirm that the pots were saved
 				interaction.reply({ content: `${interaction.options.getInteger("pots")} <:pot:1003948996349411338> given to <@${interaction.options.getUser("user").id}>` });
 			});
 		});

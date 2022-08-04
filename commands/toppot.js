@@ -60,7 +60,7 @@ module.exports = {
                     arr[i+1] = arr[endi];
                     arr[endi] = temp;
 
-                    return i + 1
+                    return i + 1;
 
                 }
 

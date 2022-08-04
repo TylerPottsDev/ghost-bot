@@ -34,7 +34,7 @@ module.exports = {
         if (!guildPots) {
             // Not creating a wallet until some pots get sent to that user
 
-            balanceEmbed.fields[0].value = "0 <:pot:1003948996349411338>"
+            balanceEmbed.fields[0].value = "0 <:pot:1003948996349411338>";
         } else {
             balanceEmbed.fields[0].value = guildPots.pots.toString() + " <:pot:1003948996349411338>";
         }

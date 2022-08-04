@@ -18,6 +18,7 @@ module.exports = {
 			return;
 		}
 
+		// Find the guild's settings document
 		GuildSettings.findOne({ guildID: interaction.guild.id }, (err, settings) => {
 			if (err) {
 				console.error(err);

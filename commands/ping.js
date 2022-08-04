@@ -51,7 +51,7 @@ module.exports = {
         const endTime = performance.now();
 
         // Update API Latency field.
-        pingEmbed.fields[2].value = `${Math.floor(endTime - startTime)}ms`
+        pingEmbed.fields[2].value = `${Math.floor(endTime - startTime)}ms`;
 
         // Finally, update the initial reply.
         const intitialReply = await interaction.fetchReply();

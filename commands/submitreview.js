@@ -26,7 +26,7 @@ module.exports = {
 				content: "No review channel set, please contact an administrator." 
 			})
 
-			return
+			return;
 		}
 
 		interaction.reply({

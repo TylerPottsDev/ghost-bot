@@ -34,6 +34,7 @@ module.exports = {
 				settings.welcome_channel_id = interaction.options.getChannel("welcome").id;
 			}
 
+			// Save the channel and reply
 			settings.save(err => {
 				if (err) {
 					console.error(err);
