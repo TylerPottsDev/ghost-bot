@@ -15,7 +15,7 @@ module.exports = {
 
         const balanceEmbed = new MessageEmbed()
             .setColor("#d81e5b")
-            .setAuthor(`Pot Leaderboard:`, interaction.client.user.avatarURL())
+            .setAuthor(`Pot Leaderboard:`, guild.iconURL({ dynamic: true }))
             .addField("1. ", "...")
             .addField("2. ", "...")
             .addField("3. ", "...")
@@ -88,7 +88,7 @@ module.exports = {
         for(let i = userArray.length - 1; i >= 0; i--) {
 
             balanceEmbed.fields[userArray.length - i - 1].name += userArray[i].user_id;
-            balanceEmbed.fields[userArray.length - i - 1].value = `${userArray[i].pots.toString()} <:pot:1003948996349411338>`;
+            balanceEmbed.fields[userArray.length - i - 1].value = `${userArray[i].pots.toString()} <:pot:1004805543988310037>`;
         }
 
         // Show the data

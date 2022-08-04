@@ -22,7 +22,7 @@ module.exports = {
 
         const balanceEmbed = new MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(`${user.username}'s Pot Wallet:`, interaction.client.user.avatarURL())
+            .setAuthor(`${user.username}'s Pot Wallet:`, user.avatarURL())
             .addField("Pots:", "...")
             .setFooter("Participate in weekly challenges to get more!")
         
@@ -34,9 +34,9 @@ module.exports = {
         if (!guildPots) {
             // Not creating a wallet until some pots get sent to that user
 
-            balanceEmbed.fields[0].value = "0 <:pot:1003948996349411338>";
+            balanceEmbed.fields[0].value = "0 <:pot:1004805543988310037>";
         } else {
-            balanceEmbed.fields[0].value = guildPots.pots.toString() + " <:pot:1003948996349411338>";
+            balanceEmbed.fields[0].value = guildPots.pots.toString() + " <:pot:1004805543988310037>";
         }
 
         // Show the data

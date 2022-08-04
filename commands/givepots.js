@@ -49,7 +49,7 @@ module.exports = {
 					return;
 				}
                 // Just a reply to confirm that the pots were saved
-				interaction.reply({ content: `${interaction.options.getInteger("pots")} <:pot:1003948996349411338> given to <@${interaction.options.getUser("user").id}>` });
+				interaction.reply({ content: `${interaction.options.getInteger("pots")} <:pot:1004805543988310037> given to <@${interaction.options.getUser("user").id}>` });
 			});
 		});
 	},
